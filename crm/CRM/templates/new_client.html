@@ -1,0 +1,67 @@
+{% extends "layout.html"%}
+{% block content %}
+<div class="index-blocks-right block-border">
+    <form action="" method="POST">
+        <div class="data-row">
+           
+            <div class="info-sell">
+                <div class="label">Клиент</div>
+                <input name="client_name" list="client_input">
+                <datalist id="client_input">
+                   {% for client in clients %}
+                   <option value="{{client[1]}}">
+                   {% endfor %}                  
+                </datalist>
+            </div>
+            
+            <div class="info-sell">
+                <div class="label">Город</div>
+                <input name="city_name" list="city_input">
+                <datalist id="city_input">
+                   {% for city in cities %}
+                   <option value="{{city[1]}}">
+                   {% endfor %}                  
+                </datalist>
+            </div>
+            
+            <div class="info-sell">
+                <div class="label">Район</div>
+                <input name="district_name" list="districts">
+                <datalist id="districts">
+                   {% for district in districts %}
+                   <option value="{{district[1]}}">
+                   {% endfor %}                  
+                </datalist>
+            </div>
+            
+            <div class="info-sell">
+                <div class="label">Коммент</div>
+                <textarea name="" class="textarea"></textarea>
+            </div>
+            
+        </div>
+        <div class="data-row">
+           
+            <div class="info-sell">
+                <div class="label">Контактное лицо</div>
+                <input type="text" name="contact_person_name">
+                
+            </div>
+            
+            <div class="info-sell">
+                <div class="label">Должность</div>
+                <input name="position_name" list="position_input">
+                <datalist id="position_input">
+                   {% for position in positions %}
+                   <option value="{{position[1]}}">
+                   {% endfor %}                  
+                </datalist>
+            </div>
+            
+        </div>
+        <button type="submit">Сохранить</button>
+    </form>
+</div>
+{% endblock %}
+
+
